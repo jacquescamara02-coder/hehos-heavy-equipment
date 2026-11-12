@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
-import { ChevronDown, Quote, Star, ArrowRight } from "lucide-react";
+import { Link, useRouter } from "@tanstack/react-router";
+import { ChevronDown, Quote, Star, ArrowRight, ArrowLeft } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SITE, waLink } from "@/lib/site";
 
@@ -14,6 +14,7 @@ export function PageHero({ title, kicker, text, image }: { title: ReactNode; kic
       <img src={image} alt="" width={1920} height={1080} className="absolute inset-0 h-full w-full object-cover animate-kenburns" />
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="relative mx-auto w-full max-w-7xl px-5">
+        <BackButton />
         <Reveal>
           <div className="text-xs font-bold uppercase tracking-[0.3em] text-gold">{kicker}</div>
           <h1 className="mt-4 max-w-4xl text-5xl font-extrabold uppercase leading-[0.95] text-steel-foreground md:text-7xl">{title}</h1>
@@ -124,5 +125,19 @@ export function CtaBand() {
         </Reveal>
       </div>
     </section>
+  );
+}
+
+export function BackButton() {
+  const router = useRouter();
+  const goBack = () => {
+    if (typeof window !== "undefined" && window.history.length > 1) router.history.back();
+    else router.navigate({ to: "/" });
+  };
+  return (
+    <button type="button" onClick={goBack} aria-label="Retour à la page précédente"
+      className="group mb-8 inline-flex cursor-pointer items-center gap-2 rounded-full border border-steel-foreground/25 bg-steel/50 px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-steel-foreground backdrop-blur transition-all duration-200 hover:border-gold hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+      <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" /> Retour
+    </button>
   );
 }

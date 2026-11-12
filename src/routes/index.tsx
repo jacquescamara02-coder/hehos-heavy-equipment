@@ -52,8 +52,17 @@ function Home() {
         <div className="absolute inset-x-0 bottom-0 hazard-stripe h-2" />
       </section>
 
-      <section className="relative -mt-1 bg-steel pb-20">
-        <div className="mx-auto grid max-w-7xl gap-4 px-5 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="relative bg-steel pt-24 pb-24">
+        <div className="mx-auto max-w-7xl px-5">
+          <Reveal>
+            <div className="mx-auto max-w-3xl text-center">
+              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-gold"><span className="h-0.5 w-8 bg-gold" />Nos services<span className="h-0.5 w-8 bg-gold" /></div>
+              <h2 className="mt-4 text-3xl font-extrabold uppercase leading-tight text-steel-foreground md:text-5xl">Une prise en charge complète, <span className="text-gold">du diagnostic à la remise en service</span></h2>
+              <p className="mt-5 text-lg text-steel-foreground/75">Chaque engin qui entre chez HEHOS bénéficie d'un suivi rigoureux, mené par des techniciens expérimentés et un outillage de pointe.</p>
+            </div>
+          </Reveal>
+        </div>
+        <div className="mx-auto mt-14 grid max-w-7xl gap-4 px-5 sm:grid-cols-2 lg:grid-cols-4">
           {PILLARS.map((p, i) => (
             <Reveal key={p.t} delay={i * 100}>
               <div className="group h-full rounded-2xl border border-steel-foreground/10 bg-steel-foreground/5 p-7 transition-all duration-300 hover:-translate-y-2 hover:border-gold/50 hover:bg-primary/15">
