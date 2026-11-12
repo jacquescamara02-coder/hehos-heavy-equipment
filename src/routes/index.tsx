@@ -7,6 +7,7 @@ import fleet from "@/assets/fleet.jpg";
 import { Reveal, CountUp } from "@/components/site/Reveal";
 import { Eyebrow, Testimonials, Faq, CtaBand } from "@/components/site/Sections";
 import { waLink } from "@/lib/site";
+import { OrbitRing, orbitVars } from "@/components/originkit/orbit-border-button";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,8 +45,8 @@ function Home() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-steel-foreground/80 md:text-xl">Diagnostic, réparation et entretien d'engins BTP de toutes marques — et pièces de rechange disponibles. Nous remettons vos machines au travail, vite.</p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link to="/contact" className="group inline-flex items-center gap-2 rounded-full bg-gradient-gold px-8 py-4 font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-1">Demander un devis <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" /></Link>
-              <a href={waLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border-2 border-sky px-8 py-4 font-bold text-steel-foreground transition-colors duration-200 hover:bg-sky hover:text-steel">Urgence WhatsApp</a>
+              <Link to="/contact" style={orbitVars({ head: "var(--sky)" })} className="orb-host group inline-flex items-center gap-2 rounded-full bg-gradient-gold px-8 py-4 font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-1"><OrbitRing />Demander un devis <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" /></Link>
+              <a href={waLink()} target="_blank" rel="noopener noreferrer" className="orb-host inline-flex items-center gap-2 rounded-full border-2 border-sky px-8 py-4 font-bold text-steel-foreground transition-colors duration-200 hover:bg-sky hover:text-steel"><OrbitRing />Urgence WhatsApp</a>
             </div>
           </Reveal>
         </div>
@@ -117,7 +118,8 @@ function Home() {
             {[{ img: fleet, t: "Réparation & entretien", d: "Pelles, chargeuses, bulldozers, niveleuses, compacteurs, camions-bennes : toutes marques, en atelier ou sur chantier.", to: "/services" as const },
               { img: parts, t: "Pièces de rechange", d: "Filtres, pompes hydrauliques, moteurs, trains de chenilles, dents de godet : pièces d'origine et adaptables.", to: "/pieces" as const }].map((c, i) => (
               <Reveal key={c.t} delay={i * 150}>
-                <Link to={c.to} className="group relative block h-[460px] overflow-hidden rounded-3xl shadow-elegant">
+                <Link to={c.to} className="orb-host group relative block h-[460px] overflow-hidden rounded-3xl shadow-elegant">
+                  <OrbitRing />
                   <img src={c.img} alt={c.t} width={1280} height={960} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-steel via-steel/40 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-8">

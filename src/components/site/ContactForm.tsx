@@ -2,7 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { CheckCircle2, Loader2, Send } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { OrbitRing } from "@/components/originkit/orbit-border-button";
+import { OrbitRing, orbitVars } from "@/components/originkit/orbit-border-button";
 
 const schema = z.object({
   full_name: z.string().trim().min(2, "Indiquez votre nom").max(100),
@@ -66,7 +66,7 @@ export function ContactForm() {
         <div className="md:col-span-2"><label htmlFor="message" className="mb-1.5 block text-sm font-semibold">Description du besoin *</label><textarea id="message" rows={5} className={field} value={f.message} onChange={set("message")} maxLength={2000} placeholder="Symptômes de la panne, référence de pièce, lieu du chantier..." /><E k="message" /></div>
       </div>
       {state === "error" && <p className="mt-4 text-destructive">L'envoi a échoué. Réessayez ou contactez-nous sur WhatsApp.</p>}
-      <button type="submit" disabled={state === "sending"} className="orb-host mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-8 py-4 font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-0.5 disabled:opacity-60">
+      <button type="submit" disabled={state === "sending"} style={orbitVars({ head: "var(--primary)" })} className="orb-host mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-8 py-4 font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-0.5 disabled:opacity-60">
         <OrbitRing />
         {state === "sending" ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />} Envoyer ma demande
       </button>
