@@ -77,7 +77,7 @@ export function Faq() {
           <Eyebrow>FAQ</Eyebrow>
           <h2 className="mt-3 text-4xl font-extrabold uppercase md:text-6xl">Questions <span className="text-primary">fréquentes</span></h2>
           <p className="mt-5 text-muted-foreground">Une autre question ? Notre équipe vous répond directement sur WhatsApp.</p>
-          <a href={waLink()} target="_blank" rel="noopener noreferrer" className="orb-host mt-6 inline-flex items-center gap-2 rounded-full bg-steel px-6 py-3 font-bold text-steel-foreground transition-transform duration-200 hover:-translate-y-0.5"><OrbitRing />Poser ma question <ArrowRight className="h-4 w-4" /></a>
+          <a href={waLink()} target="_blank" rel="noopener noreferrer" className="orb-host relative mt-6 inline-flex items-center gap-2 rounded-full bg-steel px-6 py-3 font-bold text-steel-foreground transition-transform duration-200 hover:-translate-y-0.5"><OrbitRing />Poser ma question <ArrowRight className="h-4 w-4" /></a>
         </Reveal>
         <div className="space-y-3">
           {FAQS.map((f, i) => {
@@ -120,8 +120,8 @@ export function CtaBand() {
         </Reveal>
         <Reveal delay={150}>
           <div className="flex flex-wrap gap-3">
-            <Link to="/contact" style={orbitVars({ head: "var(--primary-foreground)", inset: -1.5 })} className="orb-host rounded-full bg-gradient-gold px-7 py-4 font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-1"><OrbitRing />Demander un devis</Link>
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="orb-host rounded-full bg-steel px-7 py-4 font-bold text-steel-foreground transition-transform duration-200 hover:-translate-y-1"><OrbitRing />WhatsApp direct</a>
+            <Link to="/contact" style={orbitVars({ head: "var(--primary-foreground)", inset: -1.5 })} className="orb-host relative rounded-full bg-gradient-gold px-7 py-4 font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-1"><OrbitRing />Demander un devis</Link>
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="orb-host relative rounded-full bg-steel px-7 py-4 font-bold text-steel-foreground transition-transform duration-200 hover:-translate-y-1"><OrbitRing />WhatsApp direct</a>
           </div>
         </Reveal>
       </div>
@@ -137,7 +137,7 @@ export function BackButton() {
   };
   return (
     <button type="button" onClick={goBack} aria-label="Retour à la page précédente"
-      className="orb-host group mb-8 inline-flex cursor-pointer items-center gap-2 rounded-full border border-steel-foreground/25 bg-steel/50 px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-steel-foreground backdrop-blur transition-all duration-200 hover:border-gold hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+      className="orb-host relative group mb-8 inline-flex cursor-pointer items-center gap-2 rounded-full border border-steel-foreground/25 bg-steel/50 px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-steel-foreground backdrop-blur transition-all duration-200 hover:border-gold hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
       <OrbitRing />
       <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" /> Retour
     </button>

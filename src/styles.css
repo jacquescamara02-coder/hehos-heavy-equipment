@@ -118,7 +118,6 @@
 @property --orb-base { syntax: "<color>"; inherits: true; initial-value: oklch(0.62 0.14 235 / 0.28); }
 
 .orb-host {
-  position: relative;
   isolation: isolate;
   --orb-angle: 0deg;
   --orb-w: 2.5px;

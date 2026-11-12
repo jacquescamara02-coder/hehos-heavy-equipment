@@ -43,7 +43,7 @@ function Pieces() {
             {CATS.map((c, i) => (
               <Reveal key={c.t} delay={i * 60}>
                 <a href={waLink(`Bonjour HEHOS, je recherche une pièce : ${c.t}. Marque/modèle de l'engin : `)} target="_blank" rel="noopener noreferrer" style={orbitVars({ head: "var(--primary)" })}
-                  className="orb-host group flex h-full flex-col rounded-2xl border bg-card p-7 transition-all duration-300 hover:-translate-y-2 hover:border-gold hover:shadow-elegant">
+                  className="orb-host relative group flex h-full flex-col rounded-2xl border bg-card p-7 transition-all duration-300 hover:-translate-y-2 hover:border-gold hover:shadow-elegant">
                   <OrbitRing />
                   <c.i className="h-9 w-9 text-primary transition-transform duration-300 group-hover:scale-110" />
                   <h3 className="mt-5 text-2xl font-bold uppercase">{c.t}</h3>
@@ -70,8 +70,8 @@ function Pieces() {
             <h2 className="mt-3 text-4xl font-extrabold uppercase md:text-5xl">Envoyez la référence, <span className="text-primary">on s'occupe du reste</span></h2>
             <p className="mt-5 text-lg text-muted-foreground">Une photo de la pièce, la plaque de l'engin ou le numéro de série suffit. Nous vérifions la compatibilité et vous confirmons prix et délai.</p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <a href={waLink("Bonjour HEHOS, je souhaite commander une pièce de rechange.")} target="_blank" rel="noopener noreferrer" className="orb-host rounded-full bg-whatsapp px-8 py-4 font-bold text-primary-foreground transition-transform duration-200 hover:-translate-y-1"><OrbitRing />Commander sur WhatsApp</a>
-              <Link to="/contact" className="orb-host rounded-full bg-steel px-8 py-4 font-bold text-steel-foreground transition-transform duration-200 hover:-translate-y-1"><OrbitRing />Formulaire de demande</Link>
+              <a href={waLink("Bonjour HEHOS, je souhaite commander une pièce de rechange.")} target="_blank" rel="noopener noreferrer" className="orb-host relative rounded-full bg-whatsapp px-8 py-4 font-bold text-primary-foreground transition-transform duration-200 hover:-translate-y-1"><OrbitRing />Commander sur WhatsApp</a>
+              <Link to="/contact" className="orb-host relative rounded-full bg-steel px-8 py-4 font-bold text-steel-foreground transition-transform duration-200 hover:-translate-y-1"><OrbitRing />Formulaire de demande</Link>
             </div>
           </Reveal>
         </div>
