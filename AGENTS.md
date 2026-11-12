@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Site shell (Header, Footer, floating WhatsApp, scroll-top) is mounted once in `__root.tsx`; shared sections live in `src/components/site/` and business contact data in `src/lib/site.ts` — single source for phones/emails.
+- Contact form inserts into `contact_submissions` from the browser via an anon insert-only RLS policy; nobody can read it from the client.
