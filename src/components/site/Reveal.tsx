@@ -5,7 +5,7 @@ export function Reveal({ children, delay = 0, className = "" }: { children: Reac
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add("is-visible"); io.disconnect(); } }, { threshold: 0.12 });
+    const io = new IntersectionObserver(([e]) => { if (e?.isIntersecting) { el.classList.add("is-visible"); io.disconnect(); } }, { threshold: 0.12 });
     io.observe(el);
     return () => io.disconnect();
   }, []);
@@ -19,7 +19,7 @@ export function CountUp({ to, suffix = "", duration = 1800 }: { to: number; suff
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return;
+      if (!e?.isIntersecting) return;
       io.disconnect();
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setVal(to); return; }
       const start = performance.now();
