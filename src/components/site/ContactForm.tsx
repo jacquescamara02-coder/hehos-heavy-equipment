@@ -14,7 +14,7 @@ const schema = z.object({
 });
 type Form = z.infer<typeof schema>;
 const TYPES = ["Réparation / panne", "Diagnostic électronique", "Entretien préventif", "Achat de pièces de rechange", "Intervention sur chantier", "Autre demande"];
-const empty: Form = { full_name: "", phone: "", email: "", company: "", request_type: TYPES[0], machine: "", message: "" };
+const empty: Form = { full_name: "", phone: "", email: "", company: "", request_type: TYPES[0]!, machine: "", message: "" };
 
 const field = "w-full rounded-xl border bg-background px-4 py-3 text-foreground transition-colors duration-200 placeholder:text-muted-foreground/70 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30";
 
