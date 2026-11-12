@@ -121,13 +121,13 @@
   position: relative;
   isolation: isolate;
   --orb-angle: 0deg;
-  --orb-w: 2px;
+  --orb-w: 2.5px;
   --orb-speed: 4s;
-  --orb-glow: 7px;
+  --orb-glow: 9px;
   --orb-head: var(--gold);
-  --orb-tail: oklch(0.83 0.17 85 / 0.16);
-  --orb-base: oklch(0.62 0.14 235 / 0.28);
-  --orb-arc: 110deg;
+  --orb-tail: oklch(0.83 0.17 85 / 0.3);
+  --orb-base: oklch(0.62 0.14 235 / 0.42);
+  --orb-arc: 145deg;
 }
 
 .orb-ring, .orb-glow {
