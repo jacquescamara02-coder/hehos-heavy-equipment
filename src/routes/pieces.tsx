@@ -3,6 +3,7 @@ import { Filter, Droplets, Cog, Link2, Shovel, CircleDot, Gauge, Package } from 
 import parts from "@/assets/parts.jpg";
 import fleet from "@/assets/fleet.jpg";
 import { Reveal, CountUp } from "@/components/site/Reveal";
+import { Rotate } from "@/components/site/RotatingTitle";
 import { PageHero, Eyebrow, Testimonials, CtaBand } from "@/components/site/Sections";
 import { waLink } from "@/lib/site";
 import { OrbitRing, orbitVars } from "@/components/originkit/orbit-border-button";
@@ -35,10 +36,10 @@ const CATS = [
 function Pieces() {
   return (
     <>
-      <PageHero image={parts} kicker="Pièces de rechange" title={<>La bonne pièce, <span className="text-gradient-gold">au bon moment</span></>} text="Pièces d'origine et adaptables de qualité pour toutes les marques d'engins BTP. Stock à Lomé et commande rapide." />
+      <PageHero image={parts} kicker="Pièces de rechange" title={<>La bonne pièce, <Rotate tone="gold" words={["au bon moment", "au bon prix", "d’origine"]} /></>} text="Pièces d'origine et adaptables de qualité pour toutes les marques d'engins BTP. Stock à Lomé et commande rapide." />
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-5">
-          <Reveal><Eyebrow>Catalogue</Eyebrow><h2 className="mt-3 text-4xl font-extrabold uppercase md:text-6xl">Nos familles <span className="text-primary">de pièces</span></h2></Reveal>
+          <Reveal><Eyebrow>Catalogue</Eyebrow><h2 className="mt-3 text-4xl font-extrabold uppercase md:text-6xl">Nos familles <Rotate words={["de pièces", "de filtres", "d’hydraulique", "de moteurs"]} /></h2></Reveal>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {CATS.map((c, i) => (
               <Reveal key={c.t} delay={i * 60}>
@@ -67,7 +68,7 @@ function Pieces() {
         <div className="mx-auto max-w-4xl px-5 text-center">
           <Reveal>
             <Eyebrow>Commande simple</Eyebrow>
-            <h2 className="mt-3 text-4xl font-extrabold uppercase md:text-5xl">Envoyez la référence, <span className="text-primary">on s'occupe du reste</span></h2>
+            <h2 className="mt-3 text-4xl font-extrabold uppercase md:text-5xl">Envoyez la référence, <Rotate words={["on s’occupe du reste", "on la trouve", "on vous livre"]} /></h2>
             <p className="mt-5 text-lg text-muted-foreground">Une photo de la pièce, la plaque de l'engin ou le numéro de série suffit. Nous vérifions la compatibilité et vous confirmons prix et délai.</p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <a href={waLink("Bonjour HEHOS, je souhaite commander une pièce de rechange.")} target="_blank" rel="noopener noreferrer" className="orb-host relative rounded-full bg-whatsapp px-8 py-4 font-bold text-primary-foreground transition-transform duration-200 hover:-translate-y-1"><OrbitRing />Commander sur WhatsApp</a>

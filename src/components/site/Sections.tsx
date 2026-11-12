@@ -2,6 +2,7 @@ import { useState, type ReactNode } from "react";
 import { Link, useRouter } from "@tanstack/react-router";
 import { ChevronDown, Quote, Star, ArrowRight, ArrowLeft } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { Rotate } from "@/components/site/RotatingTitle";
 import { SITE, waLink } from "@/lib/site";
 import { OrbitRing, orbitVars } from "@/components/originkit/orbit-border-button";
 
@@ -40,7 +41,7 @@ export function Testimonials() {
   return (
     <section className="overflow-hidden bg-sky-soft py-24">
       <div className="mx-auto max-w-7xl px-5">
-        <Reveal><Eyebrow>Avis clients</Eyebrow><h2 className="mt-3 text-4xl font-extrabold uppercase md:text-6xl">Ils nous confient <span className="text-primary">leurs engins</span></h2></Reveal>
+        <Reveal><Eyebrow>Avis clients</Eyebrow><h2 className="mt-3 text-4xl font-extrabold uppercase md:text-6xl">Ils nous confient <Rotate words={["leurs engins", "leurs chantiers", "leur flotte"]} /></h2></Reveal>
       </div>
       <div className="mt-12 flex w-max gap-6 animate-marquee" aria-label="Avis clients défilants">
         {list.map((r, i) => (
@@ -75,7 +76,7 @@ export function Faq() {
       <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1fr_1.4fr]">
         <Reveal>
           <Eyebrow>FAQ</Eyebrow>
-          <h2 className="mt-3 text-4xl font-extrabold uppercase md:text-6xl">Questions <span className="text-primary">fréquentes</span></h2>
+          <h2 className="mt-3 text-4xl font-extrabold uppercase md:text-6xl">Questions <Rotate words={["fréquentes", "essentielles", "pratiques"]} /></h2>
           <p className="mt-5 text-muted-foreground">Une autre question ? Notre équipe vous répond directement sur WhatsApp.</p>
           <a href={waLink()} target="_blank" rel="noopener noreferrer" className="orb-host relative mt-6 inline-flex items-center gap-2 rounded-full bg-steel px-6 py-3 font-bold text-steel-foreground transition-transform duration-200 hover:-translate-y-0.5"><OrbitRing />Poser ma question <ArrowRight className="h-4 w-4" /></a>
         </Reveal>
