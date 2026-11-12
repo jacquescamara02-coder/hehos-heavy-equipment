@@ -80,21 +80,22 @@ export function Rotate({ words, tone = "sky", interval = 2600 }: RotateProps) {
     );
 
   return (
-    <span ref={hostRef} className="relative inline-flex">
+    <span ref={hostRef} className="relative inline-flex max-w-full">
       {probe}
-      <TextRotate
-        texts={key.split("|")}
-        mainClassName={cn("!inline-flex flex-nowrap justify-center", pill)}
-        style={style}
-        staggerFrom="last"
-        initial={{ y: "100%" }}
-        animate={{ y: 0 }}
-        exit={{ y: "-120%" }}
-        staggerDuration={0.025}
-        splitLevelClassName="overflow-hidden pb-1"
-        transition={{ type: "spring", damping: 30, stiffness: 400 }}
-        rotationInterval={interval}
-      />
+      <span className="inline-flex max-w-full" style={style}>
+        <TextRotate
+          texts={key.split("|")}
+          mainClassName={cn("!inline-flex flex-nowrap justify-center", pill)}
+          staggerFrom="last"
+          initial={{ y: "100%" }}
+          animate={{ y: 0 }}
+          exit={{ y: "-120%" }}
+          staggerDuration={0.025}
+          splitLevelClassName="overflow-hidden pb-1"
+          transition={{ type: "spring", damping: 30, stiffness: 400 }}
+          rotationInterval={interval}
+        />
+      </span>
     </span>
   );
 }
