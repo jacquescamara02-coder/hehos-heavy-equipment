@@ -36,7 +36,7 @@ export function Header() {
               className="rounded-full px-4 py-2 text-sm font-semibold text-steel-foreground/85 transition-colors duration-200 hover:text-gold"
               activeProps={{ className: "!text-gold" }}>{n.label}</Link>
           ))}
-          <a href={`tel:${SITE.phones[0]!.replace(/\s/g, "")}`} style={orbitVars({ head: "var(--sky)" })} className="orb-host ml-3 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-5 py-2.5 text-sm font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-0.5">
+          <a href={`tel:${SITE.phones[0]!.replace(/\s/g, "")}`} style={orbitVars({ head: "var(--primary-foreground)" })} className="orb-host ml-3 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-5 py-2.5 text-sm font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-0.5">
             <OrbitRing />
             <Phone className="h-4 w-4" /> {SITE.phones[0]}
           </a>

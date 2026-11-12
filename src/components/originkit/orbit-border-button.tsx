@@ -45,6 +45,7 @@ export function orbitVars(v: {
   glow?: number;
   head?: string;
   tail?: string;
+  arc?: number;
 }): CSSProperties {
   return {
     "--orb-w": v.width != null ? `${v.width}px` : undefined,
@@ -52,5 +53,6 @@ export function orbitVars(v: {
     "--orb-glow": v.glow != null ? `${v.glow}px` : undefined,
     "--orb-head": v.head,
     "--orb-tail": v.tail,
+    "--orb-arc": v.arc != null ? `${v.arc}deg` : undefined,
   } as CSSProperties;
 }
