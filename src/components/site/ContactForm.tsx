@@ -66,7 +66,7 @@ export function ContactForm() {
         <div className="md:col-span-2"><label htmlFor="message" className="mb-1.5 block text-sm font-semibold">Description du besoin *</label><textarea id="message" rows={5} className={field} value={f.message} onChange={set("message")} maxLength={2000} placeholder="Symptômes de la panne, référence de pièce, lieu du chantier..." /><E k="message" /></div>
       </div>
       {state === "error" && <p className="mt-4 text-destructive">L'envoi a échoué. Réessayez ou contactez-nous sur WhatsApp.</p>}
-      <button type="submit" disabled={state === "sending"} style={orbitVars({ head: "var(--primary-foreground)" })} className="orb-host mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-8 py-4 font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-0.5 disabled:opacity-60">
+      <button type="submit" disabled={state === "sending"} style={orbitVars({ head: "var(--primary)", inset: -1.5 })} className="orb-host mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-8 py-4 font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-0.5 disabled:opacity-60">
         <OrbitRing />
         {state === "sending" ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />} Envoyer ma demande
       </button>

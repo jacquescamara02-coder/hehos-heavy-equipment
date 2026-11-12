@@ -120,7 +120,7 @@ export function CtaBand() {
         </Reveal>
         <Reveal delay={150}>
           <div className="flex flex-wrap gap-3">
-            <Link to="/contact" style={orbitVars({ head: "var(--primary-foreground)" })} className="orb-host rounded-full bg-gradient-gold px-7 py-4 font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-1"><OrbitRing />Demander un devis</Link>
+            <Link to="/contact" style={orbitVars({ head: "var(--primary-foreground)", inset: -1.5 })} className="orb-host rounded-full bg-gradient-gold px-7 py-4 font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-1"><OrbitRing />Demander un devis</Link>
             <a href={waLink()} target="_blank" rel="noopener noreferrer" className="orb-host rounded-full bg-steel px-7 py-4 font-bold text-steel-foreground transition-transform duration-200 hover:-translate-y-1"><OrbitRing />WhatsApp direct</a>
           </div>
         </Reveal>

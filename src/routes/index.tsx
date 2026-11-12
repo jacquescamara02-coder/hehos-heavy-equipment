@@ -45,7 +45,7 @@ function Home() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-steel-foreground/80 md:text-xl">Diagnostic, réparation et entretien d'engins BTP de toutes marques — et pièces de rechange disponibles. Nous remettons vos machines au travail, vite.</p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link to="/contact" style={orbitVars({ head: "var(--primary-foreground)" })} className="orb-host group inline-flex items-center gap-2 rounded-full bg-gradient-gold px-8 py-4 font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-1"><OrbitRing />Demander un devis <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" /></Link>
+              <Link to="/contact" style={orbitVars({ head: "var(--sky)", inset: -1.5 })} className="orb-host group inline-flex items-center gap-2 rounded-full bg-gradient-gold px-8 py-4 font-bold text-gold-foreground shadow-gold transition-transform duration-200 hover:-translate-y-1"><OrbitRing />Demander un devis <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" /></Link>
               <a href={waLink()} target="_blank" rel="noopener noreferrer" style={orbitVars({ head: "var(--sky)" })} className="orb-host inline-flex items-center gap-2 rounded-full border border-sky/35 px-8 py-4 font-bold text-steel-foreground transition-colors duration-200 hover:bg-sky/10 hover:text-steel-foreground"><OrbitRing />Urgence WhatsApp</a>
             </div>
           </Reveal>
