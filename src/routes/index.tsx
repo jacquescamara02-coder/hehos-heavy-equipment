@@ -5,6 +5,7 @@ import repair from "@/assets/repair.jpg";
 import parts from "@/assets/parts.jpg";
 import fleet from "@/assets/fleet.jpg";
 import { Reveal, CountUp } from "@/components/site/Reveal";
+import { Rotate } from "@/components/site/RotatingTitle";
 import { Eyebrow, Testimonials, Faq, CtaBand } from "@/components/site/Sections";
 import { waLink } from "@/lib/site";
 import { OrbitRing, orbitVars } from "@/components/originkit/orbit-border-button";
@@ -41,7 +42,7 @@ function Home() {
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-steel/50 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-gold backdrop-blur">Lomé · Togo · Toutes marques</div>
             <h1 className="mt-6 max-w-5xl text-6xl font-extrabold uppercase leading-[0.9] text-steel-foreground md:text-8xl">
-              L'hôpital de vos <span className="text-gradient-gold">engins lourds</span>
+              L'hôpital de vos <Rotate tone="gold" words={["engins lourds", "pelles", "bulldozers", "chargeuses", "niveleuses"]} />
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-steel-foreground/80 md:text-xl">Diagnostic, réparation et entretien d'engins BTP de toutes marques — et pièces de rechange disponibles. Nous remettons vos machines au travail, vite.</p>
             <div className="mt-10 flex flex-wrap gap-4">
@@ -89,7 +90,7 @@ function Home() {
           </Reveal>
           <Reveal delay={150}>
             <Eyebrow>Qui sommes-nous</Eyebrow>
-            <h2 className="mt-3 text-4xl font-extrabold uppercase leading-none md:text-6xl">Une clinique <span className="text-primary">pour machines</span> de chantier</h2>
+            <h2 className="mt-3 text-4xl font-extrabold uppercase leading-none md:text-6xl">Une clinique <Rotate words={["pour machines", "pour pelles", "pour chargeuses"]} /> de chantier</h2>
             <p className="mt-6 text-lg text-muted-foreground">Basée à Hédzranawoé, Sagbo-Ville, HEHOS SARL accompagne les entreprises de BTP, carrières, mines et loueurs d'engins au Togo. Comme un hôpital, nous auscultons, soignons et suivons chaque machine.</p>
             <ul className="mt-8 grid gap-4 sm:grid-cols-2">
               {[{ i: Truck, t: "Intervention sur site" }, { i: Clock, t: "Réactivité 7j/7" }, { i: Award, t: "Techniciens certifiés" }, { i: ShieldCheck, t: "Travail garanti" }].map((x) => (
@@ -113,7 +114,7 @@ function Home() {
 
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-5">
-          <Reveal><Eyebrow>Nos pôles</Eyebrow><h2 className="mt-3 text-4xl font-extrabold uppercase md:text-6xl">Deux métiers, <span className="text-primary">une exigence</span></h2></Reveal>
+          <Reveal><Eyebrow>Nos pôles</Eyebrow><h2 className="mt-3 text-4xl font-extrabold uppercase md:text-6xl">Deux métiers, <Rotate words={["une exigence", "un savoir-faire", "une garantie"]} /></h2></Reveal>
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             {[{ img: fleet, t: "Réparation & entretien", d: "Pelles, chargeuses, bulldozers, niveleuses, compacteurs, camions-bennes : toutes marques, en atelier ou sur chantier.", to: "/services" as const },
               { img: parts, t: "Pièces de rechange", d: "Filtres, pompes hydrauliques, moteurs, trains de chenilles, dents de godet : pièces d'origine et adaptables.", to: "/pieces" as const }].map((c, i) => (

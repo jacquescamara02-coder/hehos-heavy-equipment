@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import fleet from "@/assets/fleet.jpg";
 import { Reveal } from "@/components/site/Reveal";
+import { Rotate } from "@/components/site/RotatingTitle";
 import { PageHero, Eyebrow, MapBlock, Faq } from "@/components/site/Sections";
 import { ContactForm } from "@/components/site/ContactForm";
 import { SITE, waLink } from "@/lib/site";
@@ -29,7 +30,7 @@ function Contact() {
   ];
   return (
     <>
-      <PageHero image={fleet} kicker="Contact · Devis" title={<>Parlons de <span className="text-gradient-gold">votre engin</span></>} text="Une panne, une pièce à trouver, un contrat d'entretien ? Notre équipe vous répond rapidement." />
+      <PageHero image={fleet} kicker="Contact · Devis" title={<>Parlons de <Rotate tone="gold" words={["votre engin", "votre panne", "votre devis", "vos pièces"]} /></>} text="Une panne, une pièce à trouver, un contrat d'entretien ? Notre équipe vous répond rapidement." />
       <section className="py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[1fr_1.5fr]">
           <div className="space-y-4">

@@ -3,6 +3,7 @@ import { Cpu, Cog, Droplets, Zap, Wrench, Truck, ClipboardCheck, Search, Hammer,
 import repair from "@/assets/repair.jpg";
 import hero from "@/assets/hero.jpg";
 import { Reveal } from "@/components/site/Reveal";
+import { Rotate } from "@/components/site/RotatingTitle";
 import { PageHero, Eyebrow, Faq, CtaBand } from "@/components/site/Sections";
 
 export const Route = createFileRoute("/services")({
@@ -37,10 +38,10 @@ const STEPS = [
 function Services() {
   return (
     <>
-      <PageHero image={hero} kicker="Réparation · Entretien" title={<>Nous soignons <span className="text-gradient-gold">tous les engins</span> de chantier</>} text="Pelles hydrauliques, chargeuses, bulldozers, niveleuses, compacteurs, tombereaux — toutes marques, en atelier ou sur site." />
+      <PageHero image={hero} kicker="Réparation · Entretien" title={<>Nous soignons <Rotate tone="gold" words={["tous les engins", "les pelles", "les bulldozers", "les compacteurs"]} /> de chantier</>} text="Pelles hydrauliques, chargeuses, bulldozers, niveleuses, compacteurs, tombereaux — toutes marques, en atelier ou sur site." />
       <section className="blueprint py-24">
         <div className="mx-auto max-w-7xl px-5">
-          <Reveal><Eyebrow>Nos spécialités</Eyebrow><h2 className="mt-3 text-4xl font-extrabold uppercase md:text-6xl">Un plateau technique <span className="text-primary">complet</span></h2></Reveal>
+          <Reveal><Eyebrow>Nos spécialités</Eyebrow><h2 className="mt-3 text-4xl font-extrabold uppercase md:text-6xl">Un plateau technique <Rotate words={["complet", "moderne", "multimarque"]} /></h2></Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {S.map((s, i) => (
               <Reveal key={s.t} delay={i * 80}>
@@ -73,7 +74,7 @@ function Services() {
       </section>
       <section className="py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2">
-          <Reveal><Eyebrow>Contrats d'entretien</Eyebrow><h2 className="mt-3 text-4xl font-extrabold uppercase md:text-5xl">Moins de pannes, <span className="text-primary">plus de chantier</span></h2>
+          <Reveal><Eyebrow>Contrats d'entretien</Eyebrow><h2 className="mt-3 text-4xl font-extrabold uppercase md:text-5xl">Moins de pannes, <Rotate words={["plus de chantier", "plus de rendement", "plus de sérénité"]} /></h2>
             <p className="mt-5 text-lg text-muted-foreground">Nos contrats préventifs planifient vidanges, changements de filtres, contrôles hydrauliques et diagnostics périodiques de toute votre flotte. Vous réduisez les immobilisations et prolongez la durée de vie de vos engins.</p></Reveal>
           <Reveal delay={150}><img src={repair} alt="Diagnostic hydraulique par un technicien HEHOS" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-elegant" /></Reveal>
         </div>
