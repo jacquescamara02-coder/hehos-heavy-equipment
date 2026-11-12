@@ -112,8 +112,61 @@
 @keyframes ping-soft { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(1.7); opacity: 0; } }
 .animate-ping-soft { animation: ping-soft 2s ease-out infinite; }
 
+/* ===== Orbit border button : anneau masqué avec comète en rotation ===== */
+@property --orb-angle { syntax: "<angle>"; inherits: true; initial-value: 0deg; }
+@property --orb-arc { syntax: "<angle>"; inherits: true; initial-value: 110deg; }
+@property --orb-base { syntax: "<color>"; inherits: true; initial-value: oklch(0.62 0.14 235 / 0.28); }
+
+.orb-host {
+  isolation: isolate;
+  --orb-angle: 0deg;
+  --orb-w: 2.5px;
+  --orb-inset: 0px;
+  --orb-speed: 4s;
+  --orb-glow: 9px;
+  --orb-head: var(--gold);
+  --orb-tail: oklch(0.83 0.17 85 / 0.45);
+  --orb-base: oklch(0.62 0.14 235 / 0.22);
+  --orb-arc: 145deg;
+}
+
+.orb-ring, .orb-glow {
+  position: absolute;
+  inset: var(--orb-inset);
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  padding: var(--orb-w);
+  background: conic-gradient(from var(--orb-angle),
+    var(--orb-base) 0deg,
+    var(--orb-base) calc(360deg - var(--orb-arc)),
+    var(--orb-tail) calc(360deg - var(--orb-arc) * 0.62),
+    var(--orb-head) calc(360deg - var(--orb-arc) * 0.22),
+    var(--orb-tail) calc(360deg - var(--orb-arc) * 0.07),
+    var(--orb-base) 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: orb-spin var(--orb-speed) linear infinite;
+  transition: --orb-arc .45s cubic-bezier(.2,.7,.2,1), --orb-base .45s cubic-bezier(.2,.7,.2,1);
+}
+.orb-glow { filter: blur(var(--orb-glow)); opacity: .7; }
+
+.orb-host:hover > .orb-ring, .orb-host:hover > .orb-glow,
+.orb-host:focus-visible > .orb-ring, .orb-host:focus-visible > .orb-glow,
+.orb-host:focus-within > .orb-ring, .orb-host:focus-within > .orb-glow {
+  --orb-arc: 360deg;
+  --orb-base: var(--orb-head);
+}
+
+.orb-host:disabled > .orb-ring, .orb-host:disabled > .orb-glow { display: none; }
+
+@keyframes orb-spin { to { --orb-angle: 360deg; } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .animate-marquee, .animate-kenburns, .animate-float, .animate-ping-soft { animation: none; }
+  .orb-ring, .orb-glow { animation: none; }
 }
