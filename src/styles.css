@@ -125,8 +125,8 @@
   --orb-speed: 4s;
   --orb-glow: 9px;
   --orb-head: var(--gold);
-  --orb-tail: oklch(0.83 0.17 85 / 0.3);
-  --orb-base: oklch(0.62 0.14 235 / 0.42);
+  --orb-tail: oklch(0.83 0.17 85 / 0.45);
+  --orb-base: oklch(0.62 0.14 235 / 0.22);
   --orb-arc: 145deg;
 }
 
@@ -140,8 +140,10 @@
   background: conic-gradient(from var(--orb-angle),
     var(--orb-base) 0deg,
     var(--orb-base) calc(360deg - var(--orb-arc)),
-    var(--orb-tail) calc(360deg - var(--orb-arc) * 0.42),
-    var(--orb-head) 360deg);
+    var(--orb-tail) calc(360deg - var(--orb-arc) * 0.62),
+    var(--orb-head) calc(360deg - var(--orb-arc) * 0.22),
+    var(--orb-tail) calc(360deg - var(--orb-arc) * 0.07),
+    var(--orb-base) 360deg);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
