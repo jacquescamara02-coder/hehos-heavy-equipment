@@ -122,6 +122,7 @@
   isolation: isolate;
   --orb-angle: 0deg;
   --orb-w: 2.5px;
+  --orb-inset: 0px;
   --orb-speed: 4s;
   --orb-glow: 9px;
   --orb-head: var(--gold);
@@ -132,7 +133,7 @@
 
 .orb-ring, .orb-glow {
   position: absolute;
-  inset: 0;
+  inset: var(--orb-inset);
   z-index: 1;
   pointer-events: none;
   border-radius: inherit;

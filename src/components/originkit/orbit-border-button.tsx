@@ -46,6 +46,8 @@ export function orbitVars(v: {
   head?: string;
   tail?: string;
   arc?: number;
+  /** Pull the ring outward, e.g. -1.5, so it reads against the page and not the fill. */
+  inset?: number;
 }): CSSProperties {
   return {
     "--orb-w": v.width != null ? `${v.width}px` : undefined,
@@ -54,5 +56,6 @@ export function orbitVars(v: {
     "--orb-head": v.head,
     "--orb-tail": v.tail,
     "--orb-arc": v.arc != null ? `${v.arc}deg` : undefined,
+    "--orb-inset": v.inset != null ? `${v.inset}px` : undefined,
   } as CSSProperties;
 }
