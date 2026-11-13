@@ -9,9 +9,9 @@ export function Footer() {
       <div className="hazard-stripe h-2" />
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-3">
-            <img src={logo.url} alt="Logo HEHOS" width={64} height={64} loading="lazy" className="h-16 w-16 rounded-full ring-2 ring-gold" />
-            <div className="font-display text-2xl font-bold">HEAVY EQUIPMENTS <span className="text-gold">HOSPITAL</span></div>
+          <div className="flex items-center gap-4 sm:gap-5">
+            <img src={logo.url} alt="Logo HEHOS" width={128} height={128} loading="lazy" className="h-20 w-20 shrink-0 rounded-full object-cover ring-[3px] ring-gold shadow-gold sm:h-28 sm:w-28" />
+            <div className="font-display text-2xl font-bold leading-tight sm:text-3xl">HEAVY EQUIPMENTS <span className="text-gold">HOSPITAL</span></div>
           </div>
           <p className="mt-5 max-w-md text-steel-foreground/70">Réparation d'engins BTP de toutes marques et vente de pièces de rechange à Lomé. Diagnostic, réparation, entretien, performance.</p>
           <p className="mt-4 font-display text-xl italic text-gold">« {SITE.tagline} »</p>
