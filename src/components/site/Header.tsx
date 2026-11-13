@@ -23,11 +23,11 @@ export function Header() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-steel/95 py-2 shadow-elegant backdrop-blur" : "bg-transparent py-4"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5">
-        <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src={logo.url} alt="Logo HEHOS" width={52} height={52} className="h-12 w-12 rounded-full ring-2 ring-gold transition-transform duration-300 hover:rotate-6" />
+        <Link to="/" className="flex items-center gap-3 sm:gap-4" onClick={() => setOpen(false)}>
+          <img src={logo.url} alt="Logo HEHOS" width={96} height={96} className={`shrink-0 rounded-full object-cover ring-[3px] ring-gold shadow-gold transition-all duration-300 hover:rotate-6 ${scrolled ? "h-12 w-12 sm:h-14 sm:w-14" : "h-16 w-16 sm:h-20 sm:w-20"}`} />
           <div className="leading-none text-steel-foreground">
-            <div className="font-display text-xl font-bold tracking-wide">HEHOS <span className="text-gold">SARL</span></div>
-            <div className="text-[11px] uppercase tracking-[0.2em] text-sky">Heavy Equipments Hospital</div>
+            <div className="font-display text-xl font-bold tracking-wide sm:text-2xl">HEHOS <span className="text-gold">SARL</span></div>
+            <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-sky sm:text-[11px]">Heavy Equipments Hospital</div>
           </div>
         </Link>
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Navigation principale">
